@@ -7,9 +7,6 @@ import java.util.Map;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 
-/**
- * Finds the region of every question in a document.
- */
 public final class DocumentRegionFinder {
 
     private DocumentRegionFinder() {

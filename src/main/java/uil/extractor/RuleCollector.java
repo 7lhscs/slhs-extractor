@@ -11,9 +11,6 @@ import org.apache.pdfbox.pdmodel.graphics.image.PDImage;
 
 /**
  * Collects the horizontal borders drawn on a page.
- *
- * <p>Both thin filled rectangles and stroked lines are recognized, because PDF producers draw
- * table borders either way. Other graphics are ignored.</p>
  */
 public final class RuleCollector extends PDFGraphicsStreamEngine {
 
