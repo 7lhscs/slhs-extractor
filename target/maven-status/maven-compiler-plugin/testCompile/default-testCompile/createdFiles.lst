@@ -1,0 +1,8 @@
+uil/extractor/MarkerParserTest.class
+uil/extractor/RuleMergerTest.class
+uil/extractor/QuestionRegionTest.class
+uil/extractor/ExtractorOptionsTest.class
+uil/extractor/ImageCropperTest.class
+uil/extractor/RegionLocatorTest.class
+uil/extractor/BorderRecorderTest.class
+uil/extractor/QuestionImageExtractorTest.class

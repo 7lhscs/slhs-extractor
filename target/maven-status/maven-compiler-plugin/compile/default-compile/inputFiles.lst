@@ -1,0 +1,16 @@
+/home/jacksonm/Projects/slhs-extractor/src/main/java/uil/extractor/BorderRecorder.java
+/home/jacksonm/Projects/slhs-extractor/src/main/java/uil/extractor/DocumentRegionFinder.java
+/home/jacksonm/Projects/slhs-extractor/src/main/java/uil/extractor/ExtractedImage.java
+/home/jacksonm/Projects/slhs-extractor/src/main/java/uil/extractor/ExtractorOptions.java
+/home/jacksonm/Projects/slhs-extractor/src/main/java/uil/extractor/ImageCropper.java
+/home/jacksonm/Projects/slhs-extractor/src/main/java/uil/extractor/Marker.java
+/home/jacksonm/Projects/slhs-extractor/src/main/java/uil/extractor/MarkerCollector.java
+/home/jacksonm/Projects/slhs-extractor/src/main/java/uil/extractor/MarkerParser.java
+/home/jacksonm/Projects/slhs-extractor/src/main/java/uil/extractor/QuestionImageExtractor.java
+/home/jacksonm/Projects/slhs-extractor/src/main/java/uil/extractor/QuestionRegion.java
+/home/jacksonm/Projects/slhs-extractor/src/main/java/uil/extractor/RegionLocator.java
+/home/jacksonm/Projects/slhs-extractor/src/main/java/uil/extractor/RegionRenderer.java
+/home/jacksonm/Projects/slhs-extractor/src/main/java/uil/extractor/Rule.java
+/home/jacksonm/Projects/slhs-extractor/src/main/java/uil/extractor/RuleCollector.java
+/home/jacksonm/Projects/slhs-extractor/src/main/java/uil/extractor/RuleMerger.java
+/home/jacksonm/Projects/slhs-extractor/src/main/java/uil/extractor/package-info.java

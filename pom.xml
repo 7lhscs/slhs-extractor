@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>io.github.7lhscs</groupId>
+    <artifactId>uil-extractor</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>UIL Extractor</name>
+    <description>
+        Library that extracts one in-memory image per question (or per group of questions sharing
+        a table row) from multiple-choice contest packet PDFs laid out as bordered tables.
+    </description>
+
+    <!--
+        Identity metadata. Maven Central REQUIRES <url>, <licenses>, <developers> and <scm> below
+        to be filled in with real, verifiable values before you can deploy. They are left as
+        explicit TODO placeholders on purpose — replace each one. Central rejects deployments that
+        ship placeholder or fabricated values.
+
+        The <groupId> is io.github.7lhscs, claimed through Sonatype's GitHub account verification
+        (create a public repo named "io.github.7lhscs" under the 7lhscs account to prove ownership).
+    -->
+    <url>TODO-project-url</url>
+    <licenses>
+        <license>
+            <!-- TODO(identity): pick a license (e.g. Apache-2.0, MIT) and point at its canonical URL. -->
+            <name>TODO-license-name</name>
+            <url>TODO-license-url</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <!-- TODO(identity): your display name and email (id set to your GitHub username). -->
+            <id>7lhscs</id>
+            <name>TODO-developer-name</name>
+            <email>TODO-developer-email</email>
+        </developer>
+    </developers>
+    <scm>
+        <!-- TODO(identity): point these at your public VCS (connection, developerConnection, url). -->
+        <connection>scm:git:TODO-scm-connection</connection>
+        <developerConnection>scm:git:TODO-scm-developer-connection</developerConnection>
+        <url>TODO-scm-browse-url</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <properties>
+        <maven.compiler.release>17</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <pdfbox.version>3.0.5</pdfbox.version>
+        <junit.version>5.10.3</junit.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox</artifactId>
+            <version>${pdfbox.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!--
+        Publishing machinery. Kept in a "release" profile so a plain `mvn test` / `mvn install`
+        never tries to sign or upload. Full signed publish to Maven Central:
+
+            mvn clean deploy -Prelease
+
+        Prerequisites (see README "Publishing"): a GPG key pair (public key on a key server) and a
+        <server> entry with id "central" in ~/.m2/settings.xml holding your Central Portal token
+        (generate it at https://central.sonatype.com). Fill in the TODO(identity) metadata above
+        and use a groupId (namespace) you own before deploying.
+    -->
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <!-- Sources JAR (required by Central). -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>3.3.1</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <!-- Javadoc JAR (required by Central). -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>3.6.3</version>
+                        <configuration>
+                            <doclint>none</doclint>
+                            <quiet>true</quiet>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <!-- GPG signatures (required by Central). Skip with -Dgpg.skip=true if needed. -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>3.2.7</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <!-- Sonatype Central Portal publisher (used by `mvn deploy`). -->
+                    <plugin>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
+                        <version>0.12.0</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <publishingServerId>central</publishingServerId>
+                            <!-- Upload and wait for Central validation; flip to true to auto-release. -->
+                            <autoPublish>false</autoPublish>
+                            <waitUntil>validated</waitUntil>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>

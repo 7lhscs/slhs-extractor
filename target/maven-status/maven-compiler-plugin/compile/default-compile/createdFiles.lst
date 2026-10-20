@@ -1,0 +1,16 @@
+uil/extractor/RuleMerger.class
+uil/extractor/BorderRecorder.class
+uil/extractor/RegionRenderer.class
+uil/extractor/QuestionRegion.class
+uil/extractor/MarkerParser.class
+uil/extractor/RuleCollector.class
+uil/extractor/ExtractedImage.class
+uil/extractor/QuestionImageExtractor.class
+uil/extractor/DocumentRegionFinder.class
+uil/extractor/RegionLocator.class
+uil/extractor/ImageCropper.class
+uil/extractor/MarkerCollector.class
+uil/extractor/Rule.class
+uil/extractor/package-info.class
+uil/extractor/Marker.class
+uil/extractor/ExtractorOptions.class
